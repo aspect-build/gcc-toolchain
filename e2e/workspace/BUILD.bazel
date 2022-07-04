@@ -1,0 +1,5 @@
+cc_binary(
+    name = "hello_world_c",
+    srcs = ["main.c"],
+    features = ["no_libstdcxx"],
+)

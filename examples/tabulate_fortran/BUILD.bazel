@@ -14,8 +14,8 @@
 # limitations under the License.
 
 load("@aspect_bazel_lib//lib:transitions.bzl", "platform_transition_filegroup")
+load("@aspect_gcc_toolchain//rules_fortran:defs.bzl", "fortran_binary")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
-load("//rules_fortran:defs.bzl", "fortran_binary")
 
 fortran_binary(
     name = "tabulate_fortran",

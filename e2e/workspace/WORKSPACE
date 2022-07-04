@@ -1,0 +1,27 @@
+local_repository(
+    name = "aspect_gcc_toolchain",
+    path = "../..",
+)
+
+#---SNIP--- Below here is re-used in the workspace snippet published on releases
+
+load("@aspect_gcc_toolchain//toolchain:repositories.bzl", "gcc_toolchain_dependencies")
+
+gcc_toolchain_dependencies()
+
+load("@aspect_gcc_toolchain//toolchain:defs.bzl", "gcc_register_toolchain", "ARCHS")
+
+gcc_register_toolchain(
+    name = "gcc_toolchain_aarch64",
+    target_arch = ARCHS.aarch64,
+)
+
+gcc_register_toolchain(
+    name = "gcc_toolchain_armv7",
+    target_arch = ARCHS.armv7,
+)
+
+gcc_register_toolchain(
+    name = "gcc_toolchain_x86_64",
+    target_arch = ARCHS.x86_64,
+)
